@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa Colombia 2025 - Fixture Oficial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; }
+        .gradient-text { background: linear-gradient(90deg, #fbbf24, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .phase-btn.active { background: linear-gradient(90deg, #1d4ed8, #2563eb); border-color: #3b82f6; }
+        .team-badge { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #334155; font-size: 0.75rem; font-weight: bold; }
+        .match-card:hover { border-color: #3b82f6; transform: translateY(-2px); transition: all 0.3s ease; }
+        @media print { .no-print { display: none; } }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <header class="max-w-6xl mx-auto mb-10 text-center">
+        <div class="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-widest text-blue-400 uppercase border border-blue-400 rounded-full">Proyecto Oficial 2025</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4">COPA <span class="gradient-text">COLOMBIA</span></h1>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">Sistema de 66 Equipos: El camino desde la Difutbol hasta la gloria internacional.</p>
+    </header>
+
+    <main class="max-w-6xl mx-auto">
+        
+        <nav class="no-print flex overflow-x-auto gap-3 mb-8 pb-2 scrollbar-hide">
+            <button onclick="showPhase('stats')" class="phase-btn flex-shrink-0 px-6 py-3 glass-card text-sm font-semibold border border-transparent hover:border-slate-500 transition-all active" id="btn-stats">Estructura</button>
+            <button onclick="showPhase('f1')" class="phase-btn flex-shrink-0 px-6 py-3 glass-card text-sm font-semibold border border-transparent hover:border-slate-500 transition-all" id="btn-f1">Fase 1 (C)</button>
+            <button onclick="showPhase('f2')" class="phase-btn flex-shrink-0 px-6 py-3 glass-card text-sm font-semibold border border-transparent hover:border-slate-500 transition-all" id="btn-f2">Fase 2 (B vs C)</button>
+            <button onclick="showPhase('f3')" class="phase-btn flex-shrink-0 px-6 py-3 glass-card text-sm font-semibold border border-transparent hover:border-slate-500 transition-all" id="btn-f3">Fase 3 (A vs Resto)</button>
+            <button onclick="showPhase('final')" class="phase-btn flex-shrink-0 px-6 py-3 glass-card text-sm font-semibold border border-transparent hover:border-slate-500 transition-all" id="btn-final">Fase Final (Octavos a Final)</button>
+        </nav>
+
+        <section id="phase-stats" class="phase-content">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <div class="glass-card p-6 text-center">
+                    <div class="text-3xl font-bold text-blue-400">18</div>
+                    <div class="text-slate-400 text-sm uppercase tracking-wider">Equipos Primera A</div>
+                </div>
+                <div class="glass-card p-6 text-center">
+                    <div class="text-3xl font-bold text-green-400">18</div>
+                    <div class="text-slate-400 text-sm uppercase tracking-wider">Equipos Primera B</div>
+                </div>
+                <div class="glass-card p-6 text-center">
+                    <div class="text-3xl font-bold text-amber-400">30</div>
+                    <div class="text-slate-400 text-sm uppercase tracking-wider">Equipos Primera C</div>
+                </div>
+            </div>
+
+            <div class="glass-card p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <i data-lucide="info" class="text-blue-400"></i> Reglas de Competencia
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8 text-slate-300">
+                    <ul class="space-y-4">
+                        <li class="flex gap-3"><i data-lucide="check-circle" class="text-blue-500 flex-shrink-0"></i> <span><strong>Fases 1 a 4:</strong> Partido Único. Localía para el equipo de menor categoría.</span></li>
+                        <li class="flex gap-3"><i data-lucide="check-circle" class="text-blue-500 flex-shrink-0"></i> <span><strong>Fase Final:</strong> Octavos, Cuartos, Semis y Final se juegan Ida y Vuelta.</span></li>
+                    </ul>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3"><i data-lucide="star" class="text-amber-500 flex-shrink-0"></i> <span><strong>Top 8 Primera A:</strong> Clasifican directo a Octavos (Segundo Semestre).</span></li>
+                        <li class="flex gap-3"><i data-lucide="award" class="text-amber-500 flex-shrink-0"></i> <span><strong>Premio Meritocracia:</strong> Los ascendidos de la C y de la B reciben "Byes" en fases tempranas.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="phase-f1" class="phase-content hidden">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+                <h2 class="text-2xl font-bold">Fase 1: El Filtro Regional (Primera C)</h2>
+                <span class="bg-blue-900/50 text-blue-300 px-3 py-1 rounded-md text-sm border border-blue-700">Febrero - Partido Único</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="f1-matches">
+                <!-- Se llena con JS -->
+            </div>
+        </section>
+
+        <section id="phase-f2" class="phase-content hidden">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+                <h2 class="text-2xl font-bold">Fase 2: El Choque del Ascenso (B vs C)</h2>
+                <span class="bg-green-900/50 text-green-300 px-3 py-1 rounded-md text-sm border border-green-700">Marzo - Partido Único</span>
+            </div>
+            <div class="glass-card p-6 mb-6 bg-blue-900/20 border-blue-500/30">
+                <p class="text-sm text-blue-200"><strong>Dato:</strong> Participan 15 ganadores de la C + 18 equipos de la B. El campeón de la C (Equipo Azul) recibe pase directo.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="f2-matches">
+                <!-- Se llena con JS -->
+            </div>
+        </section>
+
+        <section id="phase-f3" class="phase-content hidden">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+                <h2 class="text-2xl font-bold">Fase 3: La Entrada de la Primera A</h2>
+                <span class="bg-amber-900/50 text-amber-300 px-3 py-1 rounded-md text-sm border border-amber-700">Abril - Partido Único</span>
+            </div>
+            <div class="glass-card p-4 mb-6">
+                <h3 class="font-bold text-amber-400 mb-2">Equipos de la A que inician aquí:</h3>
+                <p class="text-xs text-slate-400">Millonarios, Cali, Medellín, Águilas, Bucaramanga, Fortaleza, Jaguares, Alianza, Boyacá Chicó, Cúcuta.</p>
+            </div>
+            <div id="f3-matches" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </section>
+
+        <section id="phase-final" class="phase-content hidden text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-8">Cuadro de Honor (Agosto - Noviembre)</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="glass-card p-6">
+                        <h3 class="text-xl font-bold mb-4 text-blue-400">Los 8 Sembrados (Top A)</h3>
+                        <div class="grid grid-cols-1 gap-2 text-left text-sm">
+                            <div class="p-2 border-b border-white/5 flex justify-between"><span>1. Atlético Nacional</span> <span class="text-slate-500">Local Vuelta</span></div>
+                            <div class="p-2 border-b border-white/5 flex justify-between"><span>2. Junior de B/quilla</span> <span class="text-slate-500">Local Vuelta</span></div>
+                            <div class="p-2 border-b border-white/5 flex justify-between"><span>3. Deportivo Pasto</span> <span class="text-slate-500">Local Vuelta</span></div>
+                            <div class="p-2 border-b border-white/5 flex justify-between"><span>4. América de Cali</span> <span class="text-slate-500">Local Vuelta</span></div>
+                            <div class="p-2 border-b border-white/5 flex justify-between"><span>5. Once Caldas</span> <span class="text-slate-500">Local Vuelta</span></div>
+                            <div class="p-2 border-b border-white/5 flex justify-between"><span>6. Deportes Tolima</span> <span class="text-slate-500">Local Vuelta</span></div>
+                            <div class="p-2 border-b border-white/5 flex justify-between"><span>7. Ind. Santa Fe</span> <span class="text-slate-500">Local Vuelta</span></div>
+                            <div class="p-2 border-b border-white/5 flex justify-between"><span>8. Internacional Bogotá</span> <span class="text-slate-500">Local Vuelta</span></div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6">
+                        <h3 class="text-xl font-bold mb-4 text-green-400">Los 8 Clasificados</h3>
+                        <div class="flex flex-col gap-4 items-center justify-center h-full text-slate-500 italic">
+                            <i data-lucide="swords" class="w-12 h-12 mb-2"></i>
+                            <p>Esperando sobrevivientes de Fase 4...</p>
+                            <p class="text-xs">Equipos de la B y C con mayor resiliencia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 glass-card p-8 bg-gradient-to-br from-slate-800 to-slate-900 border-2 border-amber-500/20">
+                    <h3 class="text-2xl font-bold mb-6">GRAN FINAL</h3>
+                    <div class="flex items-center justify-center gap-10">
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-slate-700 mx-auto mb-2 flex items-center justify-center text-2xl font-bold">A</div>
+                            <p class="text-sm font-bold">Campeón Llave Izq</p>
+                        </div>
+                        <div class="text-3xl font-extrabold text-amber-500 italic">VS</div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-slate-700 mx-auto mb-2 flex items-center justify-center text-2xl font-bold">B</div>
+                            <p class="text-sm font-bold">Campeón Llave Der</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 text-amber-400 font-semibold uppercase tracking-tighter">Noviembre | Ida y Vuelta</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="no-print mt-20 text-center pb-10">
+        <button onclick="window.print()" class="bg-white text-slate-900 px-8 py-3 rounded-full font-bold flex items-center gap-2 mx-auto hover:bg-slate-200 transition-all">
+            <i data-lucide="download"></i> Exportar a PDF / Imprimir
+        </button>
+        <p class="text-slate-500 text-xs mt-6">Desarrollado para Propuesta de Expansión del Fútbol Profesional Colombiano 2025</p>
+    </footer>
+
+    <script>
+        const f1Matches = [
+            ["Equipo Azul FC", "Santa Lucía FC"],
+            ["Atl. Aracataca", "Delfines FC"],
+            ["Real Soc. Aracataca", "Junior 'B'"],
+            ["Atl. Becerril", "Real Sabanalarga"],
+            ["Soccer Law", "Futuro Caldas"],
+            ["Dep. Rionegro", "Manizales FC"],
+            ["Tiendas Margos", "Once Caldas 'B'"],
+            ["Envigado 'B'", "Univ. Cundinamarca"],
+            ["Atl. Floridablanca", "Ind. Florencia"],
+            ["Cúcuta FC", "Atl. Juan Martín"],
+            ["Int. Patios", "Patriotas 'B'"],
+            ["Tigres 'B'", "Real Cundi. 'B'"],
+            ["Los Embajadores", "Distrito Élite"],
+            ["Super Depor", "Mafi Aguablanca"],
+            ["Dep. Cali 'B'", "Dep. Pasto 'B'"]
+        ];
+
+        const teamsB = ["Deportivo Pereira", "Real Cartagena", "Unión Magdalena", "Llaneros FC", "Quindío", "Patriotas", "Huila", "Bogotá FC", "Tigres", "Leones", "Orsomarso", "Barranquilla", "Real Santander", "Atlético FC", "Boca Cali", "Cúcuta", "Real Cundinamarca", "Envigado"];
+
+        function createMatch(teamA, teamB) {
+            return `
+                <div class="match-card glass-card p-4 flex items-center justify-between border border-white/5">
+                    <div class="flex-1 text-sm font-semibold">${teamA}</div>
+                    <div class="px-3 text-xs text-slate-500 font-bold italic">VS</div>
+                    <div class="flex-1 text-sm font-semibold text-right">${teamB}</div>
+                </div>
+            `;
+        }
+
+        function renderF1() {
+            const container = document.getElementById('f1-matches');
+            container.innerHTML = f1Matches.map(m => createMatch(m[0], m[1])).join('');
+        }
+
+        function renderF2() {
+            const container = document.getElementById('f2-matches');
+            let html = '';
+            for (let i = 0; i < 8; i++) {
+                html += createMatch(`Ganador Llave ${i + 1}`, teamsB[i]);
+                html += createMatch(`Ganador Llave ${i + 9}`, teamsB[i + 8]);
+            }
+            container.innerHTML = html;
+        }
+
+        function renderF3() {
+            const container = document.getElementById('f3-matches');
+            const teamsA = ["Millonarios FC", "Deportivo Cali", "Ind. Medellín", "Águilas Doradas", "Atl. Bucaramanga", "Fortaleza", "Jaguares", "Alianza FC", "Boyacá Chicó", "Cúcuta Dep."];
+            let html = '';
+            teamsA.forEach((team, idx) => {
+                html += createMatch(team, `Clasificado B/C ${idx + 1}`);
+            });
+            container.innerHTML = html;
+        }
+
+        function showPhase(phase) {
+            document.querySelectorAll('.phase-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.phase-btn').forEach(el => el.classList.remove('active'));
+
+            document.getElementById(`phase-${phase}`).classList.remove('hidden');
+            document.getElementById(`btn-${phase}`).classList.add('active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onload = () => {
+            renderF1();
+            renderF2();
+            renderF3();
+            lucide.createIcons();
+        };
+    </script>
+</body>
+</html>
